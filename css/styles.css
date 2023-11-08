@@ -15,7 +15,10 @@ div,
 img,
 ul,
 figure,
-figcaption {
+figcaption,
+section,
+article,
+aside {
   margin: 0;
   padding: 0;
   border: 0;
@@ -87,8 +90,40 @@ main {
   font-family: "Roboto Slab", serif;
 }
 
-.mobile h3{
+.mobile h3 {
   text-shadow: 5px 5px 8px #ccc;
+}
+
+article {
+  padding: 2%;
+}
+
+article h3 {
+  text-align: center;
+}
+
+article img {
+  margin: 0 auto;
+}
+
+article ul {
+  margin-left: 10%;
+}
+
+article:nth-of-type(2) {
+  background-color: rgba(204, 204, 204, 0.3);
+}
+
+aside {
+  text-align: center;
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: bold;
+  padding: 2%;
+  background-color: rgba(204, 204, 204, 0.5);
+  box-shadow: 5px 5px 8px #000;
+  text-shadow: 5px 5px 5px #b3b3b3;
+  border-radius: 0 15px;
 }
 
 .tel-link {
@@ -166,6 +201,44 @@ main {
   border: 8px solid #000;
 }
 
+#form {
+  margin-top: 2%;
+  background-color: #f2f2f2;
+  padding: 2%;
+}
+
+#form h2 {
+  text-align: center;
+}
+
+/* Style rules for form elements */
+fieldset,
+input,
+select,
+textarea {
+  margin-bottom: 2%;
+}
+
+fieldset legend {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+label {
+  display: block;
+  padding-top: 3%;
+}
+
+form #submit {
+  margin: 0 auto;
+  border: none;
+  display: block;
+  padding: 2%;
+  background-color: #b3b3b3;
+  font-size: 1em;
+  border-radius: 10px;
+}
+
 /* Style rules for footer content */
 footer p {
   font-size: 0.75em;
@@ -221,7 +294,11 @@ footer p a {
     grid-gap: 20px;
   }
 
-  .pic-text{
+  .grid-item4 {
+    grid-column: 1 / span 3;
+  }
+
+  .pic-text {
     font-size: 1em;
     padding: 10px;
   }
@@ -250,6 +327,42 @@ footer p a {
     width: 600px;
     height: 450px;
   }
+}
+
+/* Tablet Viewport: Style rules for table */
+table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+}
+
+caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1%;
+}
+
+th,
+td {
+  border: 1px solid #000;
+  padding: 2%;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.15em;
+}
+
+tr:nth-child(odd) {
+  background-color: #ccc;
+}
+
+/* Tablet Viewport: Style rule for form element */
+form {
+  width: 70%;
+  margin: 0 auto;
 }
 
 /* Media Query for Desktop Viewport */
@@ -294,16 +407,20 @@ footer p a {
     font-size: 1.8em;
   }
 
-  .pic-text{
+  article h3 {
+    font-size: 1.75em;
+  }
+
+  .pic-text {
     font-size: 1.5em;
     padding: 20px;
   }
 
-  .frame{
+  .frame {
     opacity: 0.9;
   }
 
-  .frame:hover{
+  .frame:hover {
     opacity: 1;
     box-shadow: 8px 8px 10px #808080;
   }
@@ -319,6 +436,19 @@ footer p a {
   #exercises {
     clear: left;
   }
+
+  /* Desktop Viewport: Style rules for form elements */
+  form {
+    width: auto;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+  }
+  .btn {
+    grid-column: 1 / span 3;
+  }
 }
 
 /* Media Query for Large Desktop Viewports */
@@ -326,6 +456,9 @@ footer p a {
   #container {
     width: 1920px;
     margin: 0 auto;
+  }
+  table {
+    width: 80%;
   }
 }
 
